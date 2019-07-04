@@ -36,8 +36,8 @@ class MyPlayer {
 
     let video = (this.video = document.querySelector('video'));
 
-    this.wrapper = document.querySelector('.smart-player-wrapper');
-    this.controls = document.querySelector('.smart-controls');
+    this.wrapper = document.querySelector('.myplayer-wrapper');
+    this.controls = document.querySelector('.controls');
     this.btnPlay = document.querySelector('#btnPlay');
     this.btnStop = document.querySelector('#btnStop');
     this.btnPause = document.querySelector('#btnPause');
