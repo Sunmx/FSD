@@ -1,25 +1,46 @@
-#for player div via class slector
-.myplayer {
-    margin: 0 auto;
+/*for player div via class slector */
+.my-player {
+  margin: 0 auto;
 }
 
-.myplayer video {
-    min-width: 375px;
-    width: 100%;
-    max-height: 100%;
-  }
-
-.myplayer .controls {
-    position: relative;
-    min-width: 375px;
-    top: -68px;
+.my-player video {
+  min-width: 375px;
+  width: 100%;
+  max-height: 100%;
 }
 
-.myplayer .btn,
-.myplayer .btn[disabled]:hover {
-  color: rgba(20, 7, 97, 0.801);
+.my-player .btn,
+.my-player .btn[disabled]:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.myplayer .btn:hover:not([disabled]) {
-  color: rgba(20, 7, 97);
+.my-player .btn:hover:not([disabled]) {
+  color: rgba(255, 255, 255);
+}
+
+.my-player .time-tag {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.my-player .btn-vote {
+  float: right;
+}
+
+.my-player .my-controls {
+  position: relative;
+  min-width: 375px;
+  top: -68px;
+}
+
+.my-player .my-controls .buttons {
+  padding: 0 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.my-player button:focus {
+  outline: 0;
+  box-shadow: none;
 }

@@ -1,31 +1,31 @@
-const VOTE_UP = 'up';
-const VOTE_DOWN = 'down';
+const VOTE_UP = "up";
+const VOTE_DOWN = "down";
 
-const PLAYING = 'playing';
-const PAUSED = 'paused';
-const STOPPED = 'stopped';
+const PLAYING = "playing";
+const PAUSED = "paused";
+const STOPPED = "stopped";
 
 const toHHMMSS = seconds => {
   let h,
     m,
     s,
-    result = '';
+    result = "";
 
   // hours
   h = Math.floor(seconds / 3600);
   seconds -= h * 3600;
   if (h) {
-    result = h + ':';
+    result = h + ":";
   }
 
   // minutes
   m = Math.floor(seconds / 60);
   seconds -= m * 60;
-  result += m < 10 && h > 0 ? '0' + m + ':' : m + ':';
+  result += m < 10 && h > 0 ? "0" + m + ":" : m + ":";
 
   // seconds
   s = Math.floor(seconds % 60);
-  result += s < 10 ? '0' + s : s;
+  result += s < 10 ? "0" + s : s;
   return result;
 };
 
@@ -34,16 +34,16 @@ class MyPlayer {
     this.courses = courses;
     this.currentCourse = courses[0];
 
-    let video = (this.video = document.querySelector('video'));
+    let video = (this.video = document.querySelector("video"));
 
-    this.wrapper = document.querySelector('.myplayer-wrapper');
-    this.controls = document.querySelector('.controls');
-    this.btnPlay = document.querySelector('#btnPlay');
-    this.btnStop = document.querySelector('#btnStop');
-    this.btnPause = document.querySelector('#btnPause');
-    this.btnMute = document.querySelector('#btnMute');
-    this.progressBar = document.querySelector('progress');
-    this.timeTag = document.querySelector('.time-tag');
+    this.wrapper = document.querySelector(".my-player-wrapper");
+    this.controls = document.querySelector(".my-controls");
+    this.btnPlay = document.querySelector("#btnPlay");
+    this.btnStop = document.querySelector("#btnStop");
+    this.btnPause = document.querySelector("#btnPause");
+    this.btnMute = document.querySelector("#btnMute");
+    this.progressBar = document.querySelector("progress");
+    this.timeTag = document.querySelector(".time-tag");
 
     this.status = STOPPED;
 
@@ -53,9 +53,9 @@ class MyPlayer {
   }
 
   _bindEvents(video) {
-    video.addEventListener('timeupdate', this.onTimeUpdate.bind(this), false);
-    video.addEventListener('ended', this.stop.bind(this), false);
-    window.addEventListener('resize', this._resizePlayer.bind(this), false);
+    video.addEventListener("timeupdate", this.onTimeUpdate.bind(this), false);
+    video.addEventListener("ended", this.stop.bind(this), false);
+    window.addEventListener("resize", this._resizePlayer.bind(this), false);
   }
 
   _resizePlayer(event) {
@@ -68,11 +68,11 @@ class MyPlayer {
   }
 
   _displayVoteInfo() {
-    let up = document.querySelector('#btnVoteUp i');
+    let up = document.querySelector("#btnVoteUp i");
     let key = `${VOTE_UP}@${this.currentCourse.id}`;
     up.innerText = ` ${this._getItem(key, 0)}`;
 
-    let down = document.querySelector('#btnVoteDown i');
+    let down = document.querySelector("#btnVoteDown i");
     key = `${VOTE_DOWN}@${this.currentCourse.id}`;
     down.innerText = ` ${this._getItem(key, 0)}`;
   }
@@ -90,9 +90,9 @@ class MyPlayer {
 
     // highlight course that is currently playing.
     if (link && link.style) {
-      let links = document.querySelectorAll('.course-list .link');
-      links.forEach(link => link.classList.toggle('active', false));
-      link.classList.toggle('active', true);
+      let links = document.querySelectorAll(".course-list .link");
+      links.forEach(link => link.classList.toggle("active", false));
+      link.classList.toggle("active", true);
     }
   }
 
@@ -139,9 +139,9 @@ class MyPlayer {
 
   toggleMute() {
     let muted = this.video.muted;
-    let icon = document.querySelector('#btnMute i');
-    icon.classList.toggle('fa-volume-mute', !muted);
-    icon.classList.toggle('fa-volume-up', muted);
+    let icon = document.querySelector("#btnMute i");
+    icon.classList.toggle("fa-volume-mute", !muted);
+    icon.classList.toggle("fa-volume-up", muted);
     this.video.muted = !muted;
   }
 
@@ -149,7 +149,7 @@ class MyPlayer {
     // update progress bar
     let video = this.video;
     let percent = (video.currentTime * 100.0) / video.duration;
-    this.progressBar.setAttribute('value', percent);
+    this.progressBar.setAttribute("value", percent);
 
     // update time tag
     let current = toHHMMSS(video.currentTime);
@@ -158,7 +158,7 @@ class MyPlayer {
   }
 
   vote(type) {
-    let key = type === 'up' ? VOTE_UP : VOTE_DOWN;
+    let key = type === "up" ? VOTE_UP : VOTE_DOWN;
     key = `${key}@${this.currentCourse.id}`;
     let current = this._getItem(key, 0);
     localStorage.setItem(key, current + 1);
