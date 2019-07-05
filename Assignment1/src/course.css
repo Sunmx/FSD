@@ -34,7 +34,7 @@ body {
 }
 
 .course-list .link:hover, .course-list .link.active {
-  color: #e33d29;
+  color: #474ac7;
   background: #f5e2df;
   text-decoration: none;
 }
