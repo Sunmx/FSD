@@ -67,5 +67,6 @@ angular files
 
 
 ### Todo
-[ ] don't support youtobe link, need to add YTP js to control(https://developers.google.com/youtube/iframe_api_reference)
-[ ] https://angular.io/docs
+1. [ ] don't support youtobe link, need to add YTP js to control(https://developers.google.com/youtube/iframe_api_reference)
+2. [ ] https://angular.io/docs
+3. [ ] TypeScript(https://www.w3cschool.cn/typescript/typescript-variable-declarations.html)
