@@ -2,9 +2,9 @@
 
 Try different tech stacks to build a html media player.
 
-![player screenshot](./Asignment1/my-mediaplayer.png)
+![player screenshot](./Assignment1/my-mediaplayer.png)
 
-![angular8 screenshot](./Asignment2/fsd_angular8_screen.png)
+![angular8 screenshot](./Assignment2/player_angular8_screen.png)
 
 Source code: https://github.com/sunmxue/FSD
 

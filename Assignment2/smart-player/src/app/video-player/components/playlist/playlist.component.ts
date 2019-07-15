@@ -16,6 +16,11 @@ export class PlaylistComponent implements OnInit {
 
   handleSelection(index: number) {
     this.selectedIndex = index;
+    // let selectedCourse = this.courses[this.selectedIndex];
+    // if (selectedCourse.url.search("youtube") > 0)  {
+    //   selectedCourse.url += "?controls=0"
+    // }
+    // console.log(selectedCourse.url)
     this.courseSelected.emit(this.courses[this.selectedIndex]);
   }
 }

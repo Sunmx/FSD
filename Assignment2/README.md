@@ -19,10 +19,9 @@ cd FSD
 npm install -g json-server
 json-server --watch json-server/db.json
 
-cd Assignment2
+cd Assignment2/smart-player
 npm i
 ng serve # allow localhost only
-ng serve --host 0.0.0.0  # via mobile browser
 ```
 
 ### Install notes
@@ -65,3 +64,8 @@ angular files
 3. https://ng-bootstrap.github.io/#/components/modal/examples
 4. https://www.bilibili.com/video/av38362631?from=search&seid=9321143746279532841
 5. [Color Scheme Designer (Chinese)](http://www.peise.net/tools/web/#)
+
+
+### Todo
+[ ]don't support youtobe link, need to add YTP js to control(https://developers.google.com/youtube/iframe_api_reference)
+[ ]https://angular.io/docs
